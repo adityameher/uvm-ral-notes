@@ -4,8 +4,8 @@
 - UVM BUIT-In Sequences
   - - UVM BUIT-In Sequences
   - [Register Sequences](#register-sequences)
-  - Memory Seqeuences
-  - Register And Memory Seqeuneces
+  - [Memory Seqeuences](#memory-sequnces)
+  - [Register And Memory Seqeuneces](#register-and-memory-sequences)
   - Skip Attributes
 - 
 

@@ -11,10 +11,23 @@
 ---
 ## Predictions
 This Keeps register Model upto date with DUT registers
-- Implict
-- Explict
-- Passive
-- Manual
+
+### Implict
+```
+Only Registers accessed during register methods will be updated.Registers by UVM seqeunce cannot be updated.
+```
+
+### Explict
+```
+Updates register model on all monitored transaction
+-> Need A predictor component whihc converts UVC data bus level to register operation and then updates reg model.
+```
+
+### Passive
+### Manual
+
+Accurate Prediction is not possibel for some registers like RO registers inside RO.
+
 
 ---
 ## UVM Built-In Sequences

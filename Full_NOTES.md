@@ -1,43 +1,16 @@
 # UVM_RAL
 
 - UVM BUIT-In Sequences
-  - [Register Sequences](#h11)
+  - [Register Sequences](#h1.1)
   - Memory Seqeuences
   - Register And Memory Seqeuneces
   - Skip Attributes
 - 
 
-
-
-
-h
-
-h
-g
-g
-g
-g
-gg
-g
-g
-g
-g
-g
-
-g
-g
-g
-g
-
-g
-g
-g
-g
-g
-g
+---
 ## UVM Built-In Sequences
 
-### Register Seqeuences {h11}
+### Register Seqeuences 
 ```sv
   uvm_reg_hw_reset_seq // reads all registers in a block and read back their value after an reset.
   uvm_reg_bit_bas_seq // seqeuntially writes 0 and 1 to every bit in register check if set/cleared or not.
@@ -57,5 +30,36 @@ g
   uvm_reg_mem_hdl_paths_seq // check if the backdoor paths are indeed accesible by the sim.
 ```
 Register access policies are respected by Buit in Seqeuences
+
+### Skip Attribute
+```sv
+uvm_resource_db#(bit)::set("REG::yapp_rm.yapp_router_regs.*_cnt_reg","NO_REG_ACCESS_TEST,1,this");
+// Resource database                Scope                                 AttributeName
+
+```
+### uvm_reg_mem_built_in_seq
+This sequence runs all buit in sequences except HDL paths.
+We can customize the sequence list using tests property.
+```sv
+  uvm_reg_mem_built-in_seq reg_mem_aditya;
+  task body();
+    `uvm_create(reg_mem_aditya);
+    reg_mem_aditya.model=yapp_rm;
+    reg_mem_aditya.tests= UVM_DO_ALL_REG_MEM_TESTS & ~(UVM_DO_REG_ACCESS); // run all tests except uvm reg access seq
+    `uvm_send(reg_mem_aditya)
+  endtask
+```
+---
+
+
+
+
+
+
+
+
+
+
+
 
 

@@ -2,12 +2,19 @@
 
 - Prediction
 - UVM BUIT-In Sequences
-  - - UVM BUIT-In Sequences
   - [Register Sequences](#register-sequences)
   - [Memory Seqeuences](#memory-sequnces)
   - [Register And Memory Seqeuneces](#register-and-memory-sequences)
   - Skip Attributes
 - 
+
+---
+## Predictions
+This Keeps register Model upto date with DUT registers
+- Implict
+- Explict
+- Passive
+- Manual
 
 ---
 ## UVM Built-In Sequences
